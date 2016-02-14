@@ -23,7 +23,7 @@ puts " "
 
 # третья часть задания. Список режисеров по алфавиту 
 puts "Часть 3. Список режисеров по алфавиту:"
-puts " "
+puts "  "
 movie_list.sort_producer.each{ |i| puts i }
 puts " "
 
