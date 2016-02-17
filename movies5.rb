@@ -25,7 +25,7 @@ puts " "
 # третья часть задания. Список режисеров по алфавиту 
 puts "Часть 3. Список режисеров по алфавиту:"
 puts " "
-movie_list.producer.each{ |producer| puts producer }
+movie_list.producers.each{ |producer| puts producer }
 puts " "
 
 # четвертая часть. колличество фильмов снятых не в США 
@@ -36,7 +36,7 @@ puts " "
 # бонусная часть 1 сколько фильмов снял режисер 
 puts "Бонусная часть 1. Сколько фильмов снял режисер"
 puts " "
-movie_list.producer_stat
+movie_list.producer_stat.each{ |producer| puts "#{producer[0]} ==> #{producer[1]}" }
 puts " "
 
 # бонусная часть 2 в скольких фильмах участвовал актер 
@@ -48,4 +48,4 @@ puts " "
 # использование date
 puts "Бонусная часть 3. Статистика по месяцам"
 puts " "
-movie_list.month_stat.each{ |month, list| puts "#{month} ==> #{list.size}"  }
+movie_list.month_stat.each{ |month| puts "#{month[0]} ==> #{month[1]}"  }

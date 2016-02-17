@@ -11,9 +11,13 @@
     @rating = row_movie[7]
     @producer = row_movie[8]
     @actor = row_movie[9].chop.split(',')
-    if @date.size == 4 then @date = nil 
-      elsif @date.size == 7 then @date = Date.strptime(@date, '%Y-%m')
-      else @date = Date.strptime(@date, '%Y-%m-%d')
-    end 
+    @date = case @date.size 
+        when 4 
+          nil 
+        when 7 
+          Date.strptime(@date, '%Y-%m')
+        else 
+          Date.strptime(@date, '%Y-%m-%d')
+        end 
   end
 end
