@@ -10,6 +10,14 @@
     @duration = row_movie[6].to_i
     @rating = row_movie[7]
     @producer = row_movie[8]
-    @actor = row_movie[9]
+    @actor = row_movie[9].chop.split(',')
+    @date = case @date.size 
+        when 4 
+          nil 
+        when 7 
+          Date.strptime(@date, '%Y-%m')
+        else 
+          Date.strptime(@date, '%Y-%m-%d')
+        end 
   end
 end
